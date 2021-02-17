@@ -14,9 +14,9 @@ Download Node.js and npm here: https://nodejs.org/en/
 
 
 ```
-AIRTABLE_API_KEY=keyGp6yDTKet6OLPi
-AIRTABLE_BASE_ID=appNjkDEa8Kz6P2Uv
-AIRTABLE_TABLE_NAME=setups
+AIRTABLE_API_KEY=xxxxxx
+AIRTABLE_BASE_ID=xxxxxx
+AIRTABLE_TABLE_NAME=xxxxxx
 
 ```
 
