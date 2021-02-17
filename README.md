@@ -19,7 +19,6 @@ Download Node.js and npm here: https://nodejs.org/en/
 AIRTABLE_API_KEY=xxxxxx
 AIRTABLE_BASE_ID=xxxxxx
 AIRTABLE_TABLE_NAME=xxxxxx
-
 ```
 
 ## Built with
