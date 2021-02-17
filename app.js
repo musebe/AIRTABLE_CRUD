@@ -7,7 +7,7 @@ const { table } = require('./utils/airtable');
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// CREATE A RECORD
+// CREATE A RECORD (CREATE)
 app.post('/create', async (req, res) => {
   await table.create(
     {
