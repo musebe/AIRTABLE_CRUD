@@ -2,8 +2,6 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const axios = require('axios');
-require('dotenv').config();
 const { table } = require('./utils/airtable');
 
 app.use(cors());
