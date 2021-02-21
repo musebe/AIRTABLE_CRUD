@@ -11,10 +11,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.post('/create', async (req, res) => {
   await table.create(
     {
-      imgId: 'dev_setups/yvykqrn013wsyp3vq4sm',
-      username: 'Bounce',
-      likes: 1,
-      url:'https://airtable.com/tblppuobIdWWMfUiB/viwzHea6JQzTIcRUF/recHwc6j0PdOyKuUQ',
+      Name: 'Tarry Liam',
+      Email: 'test@gmail.com',
+      Country: 'Netherlands',
     },
     (err, record) => {
       if (err) {
@@ -22,6 +21,7 @@ app.post('/create', async (req, res) => {
         return;
       }
       console.log(record.getId());
+      return  res.json(record);   
     }
   );
 });
@@ -30,6 +30,7 @@ app.post('/create', async (req, res) => {
 app.get('/all', async (req, res) => {
   const records = await table.select({}).firstPage();
   console.log(records);
+  return  res.json(records);
 });
 
 // GET A SINGLE RECORD
@@ -42,14 +43,10 @@ app.get('/single', async(req, res) => {
       }
       /* here we have the record object we can inspect */
       console.log(record);
+      return res.json(records);
     });
 });
 
-const PORT = process.env.PORT || 5000;
-
-app.listen(PORT, () => {
-  console.log(`Server started on ${PORT}`);
-});
 
 
 //UPDATE RECORDS
@@ -65,7 +62,9 @@ await table.update(
       console.error(err);
       return;
     }
-    console.log(record.get('username')); //"My car"
+    console.log(record.get('username'));
+    return res.json(record.get('username'));
+
   }
 );
 });
@@ -79,5 +78,12 @@ const id = 'rectHNeBP4u36mL6m';
         return;
       }
       console.log('Deleted record');
+      return res.json('Deleted Record');
     });
+});
+
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`Server started on ${PORT}`);
 });
